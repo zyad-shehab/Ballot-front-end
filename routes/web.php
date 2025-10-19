@@ -23,3 +23,8 @@ Route::get('/voter', [VoterController::class, 'index'])->name('voterIndex');
 Route::get('/voter/proposals', [VoterController::class, 'proposals'])->name('voterProposals');
 Route::get('/voter/vote', [VoterController::class, 'vote'])->name('voterVote');
 Route::get('/voter/winner', [VoterController::class, 'winner'])->name('voterWinner');
+
+// routes/web.php
+// Route::view('/', 'home')->name('home');
+// Route::view('/admin/add-candidate', 'admin.addCandidate')->name('addCandidate');
+// Route::view('/proposals', 'proposals')->name('proposals');

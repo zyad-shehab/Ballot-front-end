@@ -11,10 +11,8 @@
   <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 mt-10">
     <h1 class="text-3xl font-bold text-center text-green-700 mb-6">Vote</h1>
 
-    <input type="number" id="voteIndex" placeholder="Proposal index (0,1,2)"
-      class="w-full p-3 border border-green-300 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-green-400">
-    <button onclick="vote()" 
-      class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded font-semibold transition">Vote</button>
+    <input type="number" id="proposalIndex" placeholder="Proposal Index" class="border p-2 rounded">
+    <button onclick="vote(document.getElementById('proposalIndex').value)" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Vote</button>
 
     <a href="{{route('voterIndex')}}" class="mt-6 block text-center text-green-700 underline">Back to Home</a>
   </div>

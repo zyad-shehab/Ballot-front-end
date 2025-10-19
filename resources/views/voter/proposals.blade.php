@@ -11,20 +11,22 @@
   <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 mt-10">
     <h1 class="text-3xl font-bold text-center text-green-700 mb-6">Proposals</h1>
 
-    <ul class="divide-y divide-green-200">
-      <li class="py-3 flex justify-between">
-        <span class="font-medium text-green-900">0 — Proposal A</span>
-        <span class="text-green-700 font-semibold" id="votes0">0 votes</span>
-      </li>
-      <li class="py-3 flex justify-between">
-        <span class="font-medium text-green-900">1 — Proposal B</span>
-        <span class="text-green-700 font-semibold" id="votes1">0 votes</span>
-      </li>
-      <li class="py-3 flex justify-between">
-        <span class="font-medium text-green-900">2 — Proposal C</span>
-        <span class="text-green-700 font-semibold" id="votes2">0 votes</span>
-      </li>
-    </ul>
+    <ul id="proposalsList"></ul>
+
+<script>
+async function loadProposals() {
+    const list = document.getElementById('proposalsList');
+    const proposals = await getProposals();
+    list.innerHTML = '';
+    proposals.forEach((p, i) => {
+        const li = document.createElement('li');
+        li.textContent = `${i} — ${p.name} (${p.votes} votes)`;
+        list.appendChild(li);
+    });
+}
+loadProposals();
+</script>
+
 
     <a href="{{route('voterIndex')}}" class="mt-6 block text-center text-green-700 underline">Back to Home</a>
   </div>
