@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ballot DApp</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.8.2/dist/web3.min.js"></script>
+<script src="{{ asset('js/blockchain.js') }}"></script>
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-r from-blue-100 to-purple-200 min-h-screen flex flex-col items-center p-6">
@@ -23,5 +26,13 @@
     </div>
   </div>
 
+  <button onclick="testConnection()" class="bg-blue-600 text-white px-4 py-2 rounded-lg mt-2">Test Connection</button>
+
+
 </body>
 </html>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    initBlockchain();
+});
+</script>

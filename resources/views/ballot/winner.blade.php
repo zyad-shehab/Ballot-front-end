@@ -14,6 +14,19 @@
     <a href="{{route("home")}}" class="inline-block bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg font-semibold transition">Back to Home</a>
   </div>
 
+
+
+  <h2 class="text-xl font-semibold text-purple-700 mt-4">Winner: <span id="winnerName">---</span></h2>
+<button onclick="showWinner()" class="bg-green-600 text-white px-4 py-2 rounded-lg mt-2">Show Winner</button>
+
+<script>
+async function showWinner() {
+    const name = await contract.methods.winnerName().call();
+    document.getElementById('winnerName').textContent = name;
+}
+</script>
+
+
   <script>
     // محاكاة اختيار الفائز بشكل عشوائي
     const votes = [0, 0, 0]; // يمكن تحديث هذه القيم عند التصويت في النسخة النهائية
